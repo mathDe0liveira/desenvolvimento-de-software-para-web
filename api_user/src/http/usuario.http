@@ -1,0 +1,48 @@
+// Inserir usuario
+POST http://localhost:8080/user 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+{
+    "nome": "Administador",
+    "login": "admin",
+    "senha": "123123",
+    "email": "admin@gmail.com"
+ }
+
+// Utiliza-se obrigatoriamente no início da linha os simbolos: ###
+// para separar uma requisção da outra. 
+###
+
+// Listar todos os usuários em ordem alfabética do nome
+GET http://localhost:8080/user/list 
+Content-Type: application/json
+###
+
+// Obter usuário pelo ID
+GET http://localhost:8080/user/5
+Content-Type: application/json
+###
+
+// Alterar usuário pelo ID
+// OBS: obrigado preencher o campo ID
+PUT http://localhost:8080/user 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+{
+  "id": 5,
+  "nome": "Marcia Almeida",
+  "login": "marcia.almeida",
+  "email": "marcia.almeida@gmail.com",
+  "senha": "marcia123"
+}
+###
+
+// Deletar usuário pelo ID
+DELETE http://localhost:8080/user/5
+Content-Type: application/json
+###
+
+// Validar Usuário pelo Login e Senha
+POST http://localhost:8080/user/validarLogin/rosa/1313
+Content-Type: application/json
+###
